@@ -1,3 +1,4 @@
+
 var Report = require('./../Modelos/report');
 var express = require('express');
 var mongoose = require('mongoose');
@@ -18,10 +19,10 @@ var AccionSchema = mongoose.Schema({
 var Accion = mongoose.model('accion', AccionSchema, 'accion');
 
 router.route('/accion').get(function(req, res){
-	Accion.find({}, 'title', function(err, accion){
+	Accion.find({}, 'title', function(err, Accion){
 		if(err) return console.error(err);
-		res.json(accion);
-		console.log(accion);
+		res.json(Accion);
+		console.log(Accion);
 	})
 })
 /*
