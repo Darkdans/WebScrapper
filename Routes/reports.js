@@ -22,7 +22,7 @@ var AccionSchema = mongoose.Schema({
 var Accion = mongoose.model('accion', AccionSchema, 'accion');
 
 router.route('/accion').get(function(req, res){
-	Accion.find({}, 'title','image','release','description', function(err, Accion){
+	Accion.find({}, 'title', function(err, Accion){
 		if(err) return console.error(err);
 		res.json(Accion);
 		console.log(Accion);
