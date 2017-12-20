@@ -50,6 +50,7 @@ router.route('/drama').get(function(req, res){
 		console.log(Drama);
 	})
 })
+
 router.route('/horror').get(function(req, res){
 	Horror.find({}, function(err, Horror){
 		if(err) return console.error(err);
