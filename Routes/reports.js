@@ -34,7 +34,7 @@ router.route('/accion').get(function(req, res){
 router.route('/comedia').get(function(req, res){
 	Comedia.find({}, function(err, Comedia){
 		if(err) return console.error(err);
-		res.json(Accion);
+		res.json(Comedia);
 		console.log(Comedia);
 	})
 })
