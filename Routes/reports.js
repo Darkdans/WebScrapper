@@ -22,6 +22,10 @@ var CategorySchema = mongoose.Schema({
 
 var Accion = mongoose.model('accion', CategorySchema, 'accion');
 var Comedia = mongoose.model('comedia', CategorySchema, 'comedia');
+var Drama = mongoose.model('drama', CategorySchema, 'drama');
+var Horror = mongoose.model('horror', CategorySchema, 'horror');
+var Mystery = mongoose.model('mystery', CategorySchema, 'mystery');
+var Thriller = mongoose.model('thriller', CategorySchema, 'thriller');
 
 router.route('/accion').get(function(req, res){
 	Accion.find({}, function(err, Accion){
@@ -37,6 +41,38 @@ router.route('/comedia').get(function(req, res){
 		res.json(Comedia);
 		console.log(Comedia);
 	})
+})
+
+router.route('/drama').get(function(req, res){
+	Drama.find({}, function(err, Drama){
+		if(err) return console.error(err);
+		res.json(Drama);
+		console.log(Drama);
+	})
+})
+
+router.route('/horror').get(function(req, res){
+	Horror.find({}, function(err, Horror){
+	   if(err) return console.error(err);
+	   res.json(Horror);
+	   console.log(Horror);
+   })
+})
+
+router.route('/mystery').get(function(req, res){
+	Mystery.find({}, function(err, Mystery){
+	   if(err) return console.error(err);
+	   res.json(Mystery);
+	   console.log(Mystery);
+   })
+})
+
+router.route('/thriller').get(function(req, res){
+	Thriller.find({}, function(err, Thriller){
+	   if(err) return console.error(err);
+	   res.json(Thriller);
+	   console.log(Thriller);
+   })
 })
 
 
