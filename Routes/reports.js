@@ -13,13 +13,16 @@ db.once('open', function(){
 
 //Seccion de Accion//
 var AccionSchema = mongoose.Schema({
-	title: String
+	title: String,
+	image: String,
+	release: String,
+	description: String
 });
  
 var Accion = mongoose.model('accion', AccionSchema, 'accion');
 
 router.route('/accion').get(function(req, res){
-	Accion.find({}, 'title', function(err, Accion){
+	Accion.find({}, 'title','image','release','description', function(err, Accion){
 		if(err) return console.error(err);
 		res.json(Accion);
 		console.log(Accion);
