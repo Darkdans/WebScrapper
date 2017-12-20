@@ -13,31 +13,20 @@ db.once('open', function(){
 
 //Seccion de Accion//
 var AccionSchema = mongoose.Schema({
-	title: String
+	tittle: String,
+	image: String,
+	release: String,
+	description: String,
+	genre: String
 });
  
 var Accion = mongoose.model('accion', AccionSchema, 'accion');
 
 router.route('/accion').get(function(req, res){
-	Accion.find({}, , function(err, Accion){
+	Accion.find({}, function(err, Accion){
 		if(err) return console.error(err);
 		res.json(Accion);
 		console.log(Accion);
-	})
-})
-
-//Seccion de comedia//
-var ComediaSchema = mongoose.Schema({
-	title: String
-});
- 
-var Comedia = mongoose.model('comedia', ComediaSchema, 'comedia');
-
-router.route('/comedia').get(function(req, res){
-	Comedia.find({}, 'title', function(err, Comedia){
-		if(err) return console.error(err);
-		res.json(Comedia);
-		console.log(Comedia);
 	})
 })
 
