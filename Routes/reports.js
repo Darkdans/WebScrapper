@@ -12,7 +12,7 @@ db.once('open', function(){
 });
 
 //Seccion de Accion//
-var AccionSchema = mongoose.Schema({
+var CategorySchema = mongoose.Schema({
 	tittle: String,
 	image: String,
 	release: String,
@@ -20,14 +20,22 @@ var AccionSchema = mongoose.Schema({
 	genre: String
 });
 
-var Accion = mongoose.model('accion', AccionSchema, 'accion');
-
+var Accion = mongoose.model('accion', CategorySchema, 'accion');
+var Comedia = mongoose.model('comedia', CategorySchema, 'comedia');
 
 router.route('/accion').get(function(req, res){
 	Accion.find({}, function(err, Accion){
 		if(err) return console.error(err);
 		res.json(Accion);
 		console.log(Accion);
+	})
+})
+
+router.route('/comedia').get(function(req, res){
+	Comedia.find({}, function(err, Comedia){
+		if(err) return console.error(err);
+		res.json(Accion);
+		console.log(Comedia);
 	})
 })
 
