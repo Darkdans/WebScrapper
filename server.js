@@ -5,6 +5,7 @@ var reports = require('./Routes/reports');
 
 var app = express();
 
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use('/apu', reports);
@@ -25,4 +26,4 @@ app.use('/api', router);
 */
 
 app.listen(port);
-console.log('Server listenign in the port: ' +port);
+console.log('Server listening in the port: ' +port);
